@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="96v.Bn7" resname="default.boutique.title">
+        <source>default.boutique.title</source>
+        <target>Boutique</target>
+      </trans-unit>
+      <trans-unit id="crr6AHI" resname="default.contact.title">
+        <source>default.contact.title</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="foktJuG" resname="default.index.title">
+        <source>default.index.title</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="wPA13hN" resname="default.navbar.home">
+        <source>default.navbar.home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="k6SNMXX" resname="default.navbar.shop">
+        <source>default.navbar.shop</source>
+        <target>Boutique</target>
+      </trans-unit>
+      <trans-unit id="yuY5pkT" resname="default.navbar.dropdown">
+        <source>default.navbar.dropdown</source>
+        <target>Menu déroulant</target>
+      </trans-unit>
+      <trans-unit id="sru7Q77" resname="default.navbar.dropdown.action1">
+        <source>default.navbar.dropdown.action1</source>
+        <target>Action 1</target>
+      </trans-unit>
+      <trans-unit id="5i3864G" resname="default.navbar.dropdown.action2">
+        <source>default.navbar.dropdown.action2</source>
+        <target>Action 2</target>
+      </trans-unit>
+      <trans-unit id="LouHHGw" resname="default.navbar.dropdown.action3">
+        <source>default.navbar.dropdown.action3</source>
+        <target>Action 3</target>
+      </trans-unit>
+      <trans-unit id="88T1kfJ" resname="default.navbar.contact">
+        <source>default.navbar.contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="3qXjC7k" resname="default.navbar.search">
+        <source>default.navbar.search</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="buasenr" resname="default.navbar.langage">
+        <source>default.navbar.langage</source>
+        <target>Langue</target>
+      </trans-unit>
+      <trans-unit id="ja4baKr" resname="default.boutique.action">
+        <source>default.boutique.action</source>
+        <target>Voir cette catégorie</target>
+      </trans-unit>
+      <trans-unit id="ztAkDIx" resname="default.category.product.action">
+        <source>default.category.product.action</source>
+        <target>Acheter</target>
+      </trans-unit>
+      <trans-unit id="Ox52Bgu" resname="default.navbar.panier">
+        <source>default.navbar.panier</source>
+        <target>Panier</target>
+      </trans-unit>
+      <trans-unit id="YZc6CZX" resname="default.panier.title">
+        <source>default.panier.title</source>
+        <target>Panier</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

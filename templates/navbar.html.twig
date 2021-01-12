@@ -1,0 +1,49 @@
+{% set route = app.request.attributes.get('_route') %}
+{% set params = app.request.attributes.get('_route_params') %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('index') }}">{% trans %} default.navbar.home {% endtrans %}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('boutique') }}">{% trans %} default.navbar.shop {% endtrans %}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% trans %} default.navbar.dropdown {% endtrans %}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">{% trans %} default.navbar.dropdown.action1 {% endtrans %}</a></li>
+                        <li><a class="dropdown-item" href="#">{% trans %} default.navbar.dropdown.action2 {% endtrans %}</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">{% trans %} default.navbar.dropdown.action3 {% endtrans %}</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% trans %} default.navbar.langage {% endtrans %}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% for locale in supported_locales|split('|') %}
+                            <li><a class="dropdown-item" href="{{ path(route, params | merge({'_locale': locale })) }}">{{ locale }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('contact') }}" tabindex="-1" aria-disabled="true">{% trans %} default.navbar.contact {% endtrans %}</a>
+                </li>
+                <li class="nav-item">
+                    {{render(controller('App\\Controller\\NestedController::panier'))}}
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="{% trans %} default.navbar.search {% endtrans %}" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">{% trans %} default.navbar.search {% endtrans %}</button>
+            </form>
+        </div>
+    </div>
+</nav>

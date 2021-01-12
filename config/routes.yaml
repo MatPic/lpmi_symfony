@@ -1,0 +1,64 @@
+index:
+    path: /{_locale}
+    controller: App\Controller\DefaultController::index
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr
+
+contact:
+    path: /{_locale}/contact
+    controller: App\Controller\DefaultController::contact
+    requirements: 
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr
+
+boutique:
+    path: /{_locale}/boutique
+    controller: App\Controller\BoutiqueController::findAll
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr
+
+category:
+    path: /{_locale}/category/{id}
+    controller: App\Controller\CategoryController:detail
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr
+
+panier.index:
+    path: /{_locale}/panier
+    controller: App\Controller\PanierController:index
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr
+
+panier.add:
+    path: /{_locale}/panier/{idProduit}
+    controller: App\Controller\PanierController:add
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr 
+
+panier.remove:
+    path: /{_locale}/panier/{idProduit}
+    controller: App\Controller\PanierController:remove
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr 
+
+panier.delete:
+    path: /{_locale}/panier/{idProduit}
+    controller: App\Controller\PanierController:delete
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr 
+        

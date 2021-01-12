@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% block title %}{% trans %} default.boutique.title {% endtrans %}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h1>Rayon {{ category.libelle }}</h1>
+        </div>
+        {% for product in products %}
+           <div class="col-12 col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="{{host ~ product.visuel}}" class="card-img-top" alt="{{product.libelle}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.libelle}}</h5>
+                        <p class="card-text">{{product.texte}}</p>
+                        <a href="{{ path('panier.add', { "idProduit": product.id }) }}" class="btn btn-primary">{% trans %} default.category.product.action {% endtrans %}</a>
+                    </div>
+                </div>
+           </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
