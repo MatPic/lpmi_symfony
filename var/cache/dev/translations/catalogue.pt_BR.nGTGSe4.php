@@ -449,6 +449,25 @@ $catalogueEn = new MessageCatalogue('en', array (
     'Too many failed login attempts, please try again later.' => 'Too many failed login attempts, please try again later.',
     'Invalid or expired login link.' => 'Invalid or expired login link.',
   ),
+  'messages+intl-icu' => 
+  array (
+    'default.boutique.title' => 'Shop',
+    'default.contact.title' => 'Contact',
+    'default.index.title' => 'Home',
+    'default.navbar.home' => 'Accueil',
+    'default.navbar.shop' => 'Shop',
+    'default.navbar.dropdown' => 'Dropdown',
+    'default.navbar.dropdown.action1' => 'Action1',
+    'default.navbar.dropdown.action2' => 'Action2',
+    'default.navbar.dropdown.action3' => 'Action3',
+    'default.navbar.contact' => 'Contact',
+    'default.navbar.search' => 'Search',
+    'default.navbar.langage' => 'Langage',
+    'default.boutique.action' => 'See this category',
+    'default.category.product.action' => 'Buy',
+    'default.navbar.panier' => 'Basket',
+    'default.panier.title' => 'Basket',
+  ),
 ));
 $cataloguePt->addFallbackCatalogue($catalogueEn);
 

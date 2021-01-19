@@ -217,6 +217,6 @@ class __TwigTemplate_2fe0cdfa873d696351516cc3bc2c52731925f5a05bb3d0eac6923d2e34e
             </form>
         </div>
     </div>
-</nav>", "navbar.html.twig", "/home/pierre/Code/licence_mi5/templates/navbar.html.twig");
+</nav>", "navbar.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/navbar.html.twig");
     }
 }

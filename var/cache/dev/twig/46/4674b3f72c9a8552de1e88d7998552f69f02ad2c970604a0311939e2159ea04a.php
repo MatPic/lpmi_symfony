@@ -477,6 +477,6 @@ class __TwigTemplate_2c8d3a631d714ba6b994878842728acd3c5387cfd81f77cd66bdc8eb3c4
 {% block body %}
     {% include '@Twig/Exception/exception.html.twig' %}
 {% endblock %}
-", "@Twig/Exception/exception_full.html.twig", "/home/pierre/Code/licence_mi5/vendor/symfony/twig-bundle/Resources/views/Exception/exception_full.html.twig");
+", "@Twig/Exception/exception_full.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/exception_full.html.twig");
     }
 }

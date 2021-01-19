@@ -63,6 +63,6 @@ class __TwigTemplate_c0fa61bfd56bd51c8b2d687898c95220cc99426cf5755b7167aa693614a
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', ['type' => isset(\$type) ? \$type : 'hidden']) ?>
-", "@Framework/Form/hidden_widget.html.php", "/home/pierre/Code/licence_mi5/vendor/symfony/framework-bundle/Resources/views/Form/hidden_widget.html.php");
+", "@Framework/Form/hidden_widget.html.php", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/framework-bundle/Resources/views/Form/hidden_widget.html.php");
     }
 }

@@ -10,7 +10,7 @@ class PanierService {
     private $panier;
 
     public function __construct(SessionInterface $session, BoutiqueService $boutique) {
-        $this->boutique = $boutique;   
+        $this->boutique = $boutique;
         $this->session = $session;
         $this->panier = $session->get(PanierService::$PANIER_SESSION, array());
     }
@@ -31,8 +31,11 @@ class PanierService {
     }
 
     public function addProduit(int $idProduit, int $quantite = 1) {
-        // structure [id => quantite]
-        array_push($this->panier, ["id" => $idProduit, "quantite" => $quantite]);
+        if (!empty($this->panier[$idProduit])) {
+          $this->panier[$idProduit]+=1;
+        } else {
+          $this->panier[$idProduit] = $quantite;
+        }
         $this->session->set(PanierService::$PANIER_SESSION, $this->panier);
     }
 

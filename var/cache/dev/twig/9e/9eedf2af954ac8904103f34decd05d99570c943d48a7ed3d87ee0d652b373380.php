@@ -172,6 +172,6 @@ class __TwigTemplate_2e5b720c5eecff2a7e4087837e119e7e257b2c006c9864467f2a98ffcfb
         {% endfor %}
     </div>
 </div>
-{% endblock %}", "boutique/index.html.twig", "/home/pierre/Code/licence_mi5/templates/boutique/index.html.twig");
+{% endblock %}", "boutique/index.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/boutique/index.html.twig");
     }
 }

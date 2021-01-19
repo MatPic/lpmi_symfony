@@ -74,6 +74,6 @@ class __TwigTemplate_1438ea38d3064f84625a15f27ce00358fe6a249aecbac2e4603a63d5b12
     public function getSourceContext()
     {
         return new Source("<a class=\"nav-link\" href=\"{{ path('panier.index') }}\" tabindex=\"-1\" aria-disabled=\"true\">{% trans %} default.navbar.panier {% endtrans %} {{ quantite }}</a>
-", "fragment/panier.html.twig", "/home/pierre/Code/licence_mi5/templates/fragment/panier.html.twig");
+", "fragment/panier.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/fragment/panier.html.twig");
     }
 }

@@ -65,6 +65,6 @@ class __TwigTemplate_a712e06bdc67402b4036a67bef22c37fd2be4dd3a76c51641fec74cc1e0
     {
         return new Source("id=\"<?php echo \$view->escape(\$id) ?>\" name=\"<?php echo \$view->escape(\$full_name) ?>\"<?php if (\$disabled): ?> disabled=\"disabled\"<?php endif ?>
 <?php if (\$required): ?> required=\"required\"<?php endif ?>
-<?php echo \$attr ? ' '.\$view['form']->block(\$form, 'attributes') : '' ?>", "@Framework/Form/widget_attributes.html.php", "/home/pierre/Code/licence_mi5/vendor/symfony/framework-bundle/Resources/views/Form/widget_attributes.html.php");
+<?php echo \$attr ? ' '.\$view['form']->block(\$form, 'attributes') : '' ?>", "@Framework/Form/widget_attributes.html.php", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/framework-bundle/Resources/views/Form/widget_attributes.html.php");
     }
 }

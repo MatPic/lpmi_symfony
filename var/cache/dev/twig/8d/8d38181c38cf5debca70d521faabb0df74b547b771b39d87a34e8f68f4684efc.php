@@ -86,29 +86,27 @@ class __TwigTemplate_9fe4d10fade1337befe77e248772c9db4d28be54365262c3a7e4881b3af
 
         // line 4
         echo "    <p>Panier</p>
-<div class=\"container\">
-    <div class=\"row\">
-        ";
+    <div class=\"container\">
+        <div class=\"row\">
+            ";
         // line 7
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["panier"]) || array_key_exists("panier", $context) ? $context["panier"] : (function () { throw new RuntimeError('Variable "panier" does not exist.', 7, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+        foreach ($context['_seq'] as $context["id"] => $context["article"]) {
             // line 8
-            echo "        <div class=\"col-12\">id: ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "array", false, false, false, 8), "html", null, true);
+            echo "            <div class=\"col-12\">id: ";
+            echo twig_escape_filter($this->env, $context["id"], "html", null, true);
             echo " quantite: ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "quantite", [], "array", false, false, false, 8), "html", null, true);
+            echo twig_escape_filter($this->env, $context["article"], "html", null, true);
             echo "</div>
-        ";
+            ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['id'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 9
-        echo " 
+        // line 10
+        echo "        </div>
     </div>
-</div>
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -130,7 +128,7 @@ class __TwigTemplate_9fe4d10fade1337befe77e248772c9db4d28be54365262c3a7e4881b3af
 
     public function getDebugInfo()
     {
-        return array (  108 => 9,  97 => 8,  93 => 7,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
+        return array (  108 => 10,  97 => 8,  93 => 7,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -139,14 +137,14 @@ class __TwigTemplate_9fe4d10fade1337befe77e248772c9db4d28be54365262c3a7e4881b3af
 {% block title %}{% trans %} default.panier.title {% endtrans %}{% endblock %}
 {% block content %}
     <p>Panier</p>
-<div class=\"container\">
-    <div class=\"row\">
-        {% for article in panier %}
-        <div class=\"col-12\">id: {{ article[\"id\"] }} quantite: {{ article[\"quantite\"] }}</div>
-        {% endfor %} 
+    <div class=\"container\">
+        <div class=\"row\">
+            {% for id, article in panier %}
+            <div class=\"col-12\">id: {{ id }} quantite: {{ article }}</div>
+            {% endfor %}
+        </div>
     </div>
-</div>
-
-{% endblock %}", "panier/index.html.twig", "/home/pierre/Code/licence_mi5/templates/panier/index.html.twig");
+{% endblock %}
+", "panier/index.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/panier/index.html.twig");
     }
 }

@@ -642,6 +642,6 @@ class __TwigTemplate_94cf6802d2b6427517e89be54bb498aac4c663ed1b3476145ac2934029a
         }());
     </script>
 {% endblock %}
-", "@WebProfiler/Profiler/layout.html.twig", "/home/pierre/Code/licence_mi5/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/layout.html.twig");
+", "@WebProfiler/Profiler/layout.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/layout.html.twig");
     }
 }

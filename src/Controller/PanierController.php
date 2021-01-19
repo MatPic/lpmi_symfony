@@ -12,12 +12,13 @@ class PanierController extends AbstractController
     public static $TEMPLATE = "panier/index.html.twig";
 
     public function index(PanierService $pS) {
+        dump($this->getPanier($pS));
         return $this->render(PanierController::$TEMPLATE, [ "panier" => $this->getPanier($pS)]);
     }
 
     public function add(int $idProduit, PanierService $pS) {
         $pS->addProduit($idProduit);
-        return $this->render(PanierController::$TEMPLATE, [ "panier" => $this->getPanier($pS)]);
+        return $this->redirectToRoute('panier.index');
     }
 
     public function remove(int $idProduit) {

@@ -117,6 +117,6 @@ class __TwigTemplate_006479f796aab459e08ad72fd0d87846ac01c4e86c0f3b66a882c4681f1
 {% block content %}
     <p>index</p>
 {% endblock %}
-", "default/index.html.twig", "/home/pierre/Code/licence_mi5/templates/default/index.html.twig");
+", "default/index.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/default/index.html.twig");
     }
 }

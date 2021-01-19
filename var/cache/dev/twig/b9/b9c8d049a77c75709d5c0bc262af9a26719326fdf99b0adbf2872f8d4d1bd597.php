@@ -1704,6 +1704,6 @@ class __TwigTemplate_e4e2815ea8a5a61503b39a12c20e425d54fa4bb1889720d7b958151806f
     });
 
 /*]]>*/</script>
-", "@WebProfiler/Profiler/base_js.html.twig", "/home/pierre/Code/licence_mi5/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base_js.html.twig");
+", "@WebProfiler/Profiler/base_js.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base_js.html.twig");
     }
 }

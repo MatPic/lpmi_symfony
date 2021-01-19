@@ -71,6 +71,6 @@ class __TwigTemplate_2d70b251d3a84671ef2e44f201c23454b8d2eb172b8d2a55317a7d8025c
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.html.twig\" %}
-", "@email/default/notification/body.html.twig", "/home/pierre/Code/licence_mi5/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
+", "@email/default/notification/body.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
     }
 }

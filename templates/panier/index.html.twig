@@ -2,12 +2,11 @@
 {% block title %}{% trans %} default.panier.title {% endtrans %}{% endblock %}
 {% block content %}
     <p>Panier</p>
-<div class="container">
-    <div class="row">
-        {% for article in panier %}
-        <div class="col-12">id: {{ article["id"] }} quantite: {{ article["quantite"] }}</div>
-        {% endfor %} 
+    <div class="container">
+        <div class="row">
+            {% for id, article in panier %}
+            <div class="col-12">id: {{ id }} quantite: {{ article }}</div>
+            {% endfor %}
+        </div>
     </div>
-</div>
-
 {% endblock %}

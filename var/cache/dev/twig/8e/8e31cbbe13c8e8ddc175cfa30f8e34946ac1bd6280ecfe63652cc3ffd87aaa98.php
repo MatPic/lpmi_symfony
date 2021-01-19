@@ -1289,6 +1289,6 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 353), twig_c
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/home/pierre/Code/licence_mi5/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }

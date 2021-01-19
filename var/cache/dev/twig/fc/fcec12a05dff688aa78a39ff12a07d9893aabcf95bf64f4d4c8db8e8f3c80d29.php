@@ -161,6 +161,6 @@ class __TwigTemplate_97713b651075fc12100eb9dd3ae454ce56fa7460e569ffd1fb9f32d2930
         </tr>
     </tbody>
 </table>
-", "@Twig/Exception/traces_text.html.twig", "/home/pierre/Code/licence_mi5/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
+", "@Twig/Exception/traces_text.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
     }
 }

@@ -83,6 +83,6 @@ class __TwigTemplate_0b8f354ad46d5175f55254e5a6b346c30b737e0077d175e088963f553c0
 {{ status_code }} {{ status_text }}
 
 */
-", "@Twig/Exception/error.css.twig", "/home/pierre/Code/licence_mi5/vendor/symfony/twig-bundle/Resources/views/Exception/error.css.twig");
+", "@Twig/Exception/error.css.twig", "/home/nion/LPMI_symfony/lpmi_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/error.css.twig");
     }
 }
