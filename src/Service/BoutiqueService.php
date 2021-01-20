@@ -39,7 +39,7 @@ class BoutiqueService {
     public function findProduitsByLibelleOrTexte(string $search) {
         return array_filter($this->produits,
             function ($p) use ($search) {
-                return ($search=="" || mb_strpos(mb_strtolower($p["libelle"]." ".$p["texte"]), mb_strtolower($search)) !== false);
+                // return ($search=="" || mb_strpos(mb_strtolower($p["libelle"]." ".$p["texte"]), mb_strtolower($search)) !== false);
             });
     }
 

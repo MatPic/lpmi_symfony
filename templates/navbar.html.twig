@@ -40,8 +40,8 @@
                     {{render(controller('App\\Controller\\NestedController::panier'))}}
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="{% trans %} default.navbar.search {% endtrans %}" aria-label="Search">
+            <form method="get" action="{{ path('category.search') }}" class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="{% trans %} default.navbar.search {% endtrans %}" aria-label="Search" name="search">
                 <button class="btn btn-outline-success" type="submit">{% trans %} default.navbar.search {% endtrans %}</button>
             </form>
         </div>

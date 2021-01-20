@@ -88,7 +88,7 @@ class __TwigTemplate_447bcc3edd689b38a035604dd5e824071205962aee983f6a117adb8aefc
         echo "<div class=\"container\">
     <div class=\"row mt-5\">
         <div class=\"col-12\">
-            <h1>Rayon ";
+            <h1>Rayon: ";
         // line 7
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 7, $this->source); })()), "libelle", [], "any", false, false, false, 7), "html", null, true);
         echo "</h1>
@@ -165,7 +165,7 @@ class __TwigTemplate_447bcc3edd689b38a035604dd5e824071205962aee983f6a117adb8aefc
 <div class=\"container\">
     <div class=\"row mt-5\">
         <div class=\"col-12\">
-            <h1>Rayon {{ category.libelle }}</h1>
+            <h1>Rayon: {{category.libelle}}</h1>
         </div>
         {% for product in products %}
            <div class=\"col-12 col-md-6 col-lg-3\">
@@ -181,6 +181,7 @@ class __TwigTemplate_447bcc3edd689b38a035604dd5e824071205962aee983f6a117adb8aefc
         {% endfor %}
     </div>
 </div>
-{% endblock %}", "category/index.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/category/index.html.twig");
+{% endblock %}
+", "category/index.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/category/index.html.twig");
     }
 }

@@ -131,11 +131,14 @@ class __TwigTemplate_2fe0cdfa873d696351516cc3bc2c52731925f5a05bb3d0eac6923d2e34e
         echo "
                 </li>
             </ul>
-            <form class=\"d-flex\">
+            <form method=\"get\" action=\"";
+        // line 43
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category.search");
+        echo "\" class=\"d-flex\">
                 <input class=\"form-control me-2\" type=\"search\" placeholder=\"";
         // line 44
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("default.navbar.search", [], "messages");
-        echo "\" aria-label=\"Search\">
+        echo "\" aria-label=\"Search\" name=\"search\">
                 <button class=\"btn btn-outline-success\" type=\"submit\">";
         // line 45
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("default.navbar.search", [], "messages");
@@ -143,7 +146,8 @@ class __TwigTemplate_2fe0cdfa873d696351516cc3bc2c52731925f5a05bb3d0eac6923d2e34e
             </form>
         </div>
     </div>
-</nav>";
+</nav>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -164,7 +168,7 @@ class __TwigTemplate_2fe0cdfa873d696351516cc3bc2c52731925f5a05bb3d0eac6923d2e34e
 
     public function getDebugInfo()
     {
-        return array (  141 => 45,  137 => 44,  130 => 40,  122 => 37,  117 => 34,  106 => 32,  102 => 31,  98 => 29,  96 => 28,  88 => 23,  83 => 21,  79 => 20,  75 => 18,  73 => 17,  64 => 13,  52 => 6,  47 => 3,  45 => 2,  43 => 1,);
+        return array (  144 => 45,  140 => 44,  136 => 43,  130 => 40,  122 => 37,  117 => 34,  106 => 32,  102 => 31,  98 => 29,  96 => 28,  88 => 23,  83 => 21,  79 => 20,  75 => 18,  73 => 17,  64 => 13,  52 => 6,  47 => 3,  45 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -211,12 +215,13 @@ class __TwigTemplate_2fe0cdfa873d696351516cc3bc2c52731925f5a05bb3d0eac6923d2e34e
                     {{render(controller('App\\\\Controller\\\\NestedController::panier'))}}
                 </li>
             </ul>
-            <form class=\"d-flex\">
-                <input class=\"form-control me-2\" type=\"search\" placeholder=\"{% trans %} default.navbar.search {% endtrans %}\" aria-label=\"Search\">
+            <form method=\"get\" action=\"{{ path('category.search') }}\" class=\"d-flex\">
+                <input class=\"form-control me-2\" type=\"search\" placeholder=\"{% trans %} default.navbar.search {% endtrans %}\" aria-label=\"Search\" name=\"search\">
                 <button class=\"btn btn-outline-success\" type=\"submit\">{% trans %} default.navbar.search {% endtrans %}</button>
             </form>
         </div>
     </div>
-</nav>", "navbar.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/navbar.html.twig");
+</nav>
+", "navbar.html.twig", "/home/nion/LPMI_symfony/lpmi_symfony/templates/navbar.html.twig");
     }
 }

@@ -35,13 +35,16 @@ return [
                 .'|/(fr|en)/(?'
                     .'|c(?'
                         .'|ontact(*:208)'
-                        .'|ategory/([^/]++)(*:232)'
+                        .'|ategory(?'
+                            .'|/([^/]++)(*:235)'
+                            .'|(*:243)'
+                        .')'
                     .')'
-                    .'|boutique(*:249)'
+                    .'|boutique(*:261)'
                     .'|panier(?'
-                        .'|(*:266)'
+                        .'|(*:278)'
                         .'|/([^/]++)(?'
-                            .'|(*:286)'
+                            .'|(*:298)'
                         .')'
                     .')'
                 .')'
@@ -57,10 +60,11 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         178 => [[['_route' => 'index', '_locale' => 'fr', '_controller' => 'App\\Controller\\DefaultController::index'], ['_locale'], null, null, false, true, null]],
         208 => [[['_route' => 'contact', '_locale' => 'fr', '_controller' => 'App\\Controller\\DefaultController::contact'], ['_locale'], null, null, false, false, null]],
-        232 => [[['_route' => 'category', '_locale' => 'fr', '_controller' => 'App\\Controller\\CategoryController:detail'], ['_locale', 'id'], null, null, false, true, null]],
-        249 => [[['_route' => 'boutique', '_locale' => 'fr', '_controller' => 'App\\Controller\\BoutiqueController::findAll'], ['_locale'], null, null, false, false, null]],
-        266 => [[['_route' => 'panier.index', '_locale' => 'fr', '_controller' => 'App\\Controller\\PanierController:index'], ['_locale'], null, null, false, false, null]],
-        286 => [
+        235 => [[['_route' => 'category', '_locale' => 'fr', '_controller' => 'App\\Controller\\CategoryController:detail'], ['_locale', 'id'], null, null, false, true, null]],
+        243 => [[['_route' => 'category.search', '_locale' => 'fr', '_controller' => 'App\\Controller\\CategoryController:search'], ['_locale'], null, null, false, false, null]],
+        261 => [[['_route' => 'boutique', '_locale' => 'fr', '_controller' => 'App\\Controller\\BoutiqueController::findAll'], ['_locale'], null, null, false, false, null]],
+        278 => [[['_route' => 'panier.index', '_locale' => 'fr', '_controller' => 'App\\Controller\\PanierController:index'], ['_locale'], null, null, false, false, null]],
+        298 => [
             [['_route' => 'panier.add', '_locale' => 'fr', '_controller' => 'App\\Controller\\PanierController:add'], ['_locale', 'idProduit'], null, null, false, true, null],
             [['_route' => 'panier.remove', '_locale' => 'fr', '_controller' => 'App\\Controller\\PanierController:remove'], ['_locale', 'idProduit'], null, null, false, true, null],
             [['_route' => 'panier.delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\PanierController:delete'], ['_locale', 'idProduit'], null, null, false, true, null],

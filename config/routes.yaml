@@ -9,7 +9,7 @@ index:
 contact:
     path: /{_locale}/contact
     controller: App\Controller\DefaultController::contact
-    requirements: 
+    requirements:
         _locale: '%app.supported_locales%'
     defaults:
         _locale: fr
@@ -22,9 +22,18 @@ boutique:
     defaults:
         _locale: fr
 
+# category = product
 category:
     path: /{_locale}/category/{id}
     controller: App\Controller\CategoryController:detail
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr
+
+category.search:
+    path: /{_locale}/category
+    controller: App\Controller\CategoryController:search
     requirements:
         _locale: '%app.supported_locales%'
     defaults:
@@ -44,7 +53,7 @@ panier.add:
     requirements:
         _locale: '%app.supported_locales%'
     defaults:
-        _locale: fr 
+        _locale: fr
 
 panier.remove:
     path: /{_locale}/panier/{idProduit}
@@ -52,7 +61,7 @@ panier.remove:
     requirements:
         _locale: '%app.supported_locales%'
     defaults:
-        _locale: fr 
+        _locale: fr
 
 panier.delete:
     path: /{_locale}/panier/{idProduit}
@@ -60,5 +69,4 @@ panier.delete:
     requirements:
         _locale: '%app.supported_locales%'
     defaults:
-        _locale: fr 
-        
+        _locale: fr
