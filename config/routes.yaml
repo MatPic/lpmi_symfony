@@ -47,16 +47,8 @@ panier.index:
     defaults:
         _locale: fr
 
-panier.add:
-    path: /{_locale}/panier/{idProduit}
-    controller: App\Controller\PanierController:add
-    requirements:
-        _locale: '%app.supported_locales%'
-    defaults:
-        _locale: fr
-
 panier.remove:
-    path: /{_locale}/panier/{idProduit}
+    path: /{_locale}/panier/remove/{idProduit}
     controller: App\Controller\PanierController:remove
     requirements:
         _locale: '%app.supported_locales%'
@@ -64,8 +56,16 @@ panier.remove:
         _locale: fr
 
 panier.delete:
-    path: /{_locale}/panier/{idProduit}
+    path: /{_locale}/panier/delete/{idProduit}
     controller: App\Controller\PanierController:delete
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: fr
+
+panier.add:
+    path: /{_locale}/panier/add/{idProduit}
+    controller: App\Controller\PanierController:add
     requirements:
         _locale: '%app.supported_locales%'
     defaults:

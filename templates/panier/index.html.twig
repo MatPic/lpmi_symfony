@@ -5,7 +5,9 @@
     <div class="container">
         <div class="row">
             {% for id, article in panier %}
-            <div class="col-12">id: {{ id }} quantite: {{ article }}</div>
+            <div class="col-8">id: {{ id }} quantite: {{ article }}</div>
+            <div class="col-2"><a href="{{ path('panier.remove', { "idProduit": id }) }}">R</a></div>
+            <div class="col-2"><a href="{{ path('panier.delete', { "idProduit": id }) }}">D</a></div>
             {% endfor %}
         </div>
     </div>
