@@ -73,7 +73,7 @@ panier.add:
 
 # Usager
 usager_index:
-    path: /{_locale}/usager
+    path: /backoffice/{_locale}/usager
     controller: App\Controller\UsagerController:index
     requirements:
         _locale: '%app.supported_locales%'
@@ -82,7 +82,7 @@ usager_index:
     methods:    GET
 
 usager_new:
-    path: /{_locale}/usager/new
+    path: /backoffice/{_locale}/usager/new
     controller: App\Controller\UsagerController:new
     requirements:
         _locale: '%app.supported_locales%'
@@ -91,7 +91,7 @@ usager_new:
     methods:    GET|POST
 
 usager_edit:
-    path: /{_locale}/usager/{id}/edit
+    path: /backoffice/{_locale}/usager/{id}/edit
     controller: App\Controller\UsagerController:edit
     requirements:
         _locale: '%app.supported_locales%'
@@ -100,7 +100,7 @@ usager_edit:
     methods:    GET|POST
 
 usager_delete:
-    path: /{_locale}/usager/{id}
+    path: /backoffice/{_locale}/usager/{id}
     controller: App\Controller\UsagerController:delete
     requirements:
         _locale: '%app.supported_locales%'
@@ -109,7 +109,7 @@ usager_delete:
     methods:    DELETE
 
 usager_show:
-    path: /{_locale}/usager/{id}
+    path: /backoffice/{_locale}/usager/{id}
     controller: App\Controller\UsagerController:show
     requirements:
         _locale: '%app.supported_locales%'
