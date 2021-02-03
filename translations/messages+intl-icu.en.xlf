@@ -27,15 +27,15 @@
       </trans-unit>
       <trans-unit id="yuY5pkT" resname="default.navbar.dropdown">
         <source>default.navbar.dropdown</source>
-        <target>Dropdown</target>
+        <target>User</target>
       </trans-unit>
       <trans-unit id="sru7Q77" resname="default.navbar.dropdown.action1">
         <source>default.navbar.dropdown.action1</source>
-        <target>Action1</target>
+        <target>Login</target>
       </trans-unit>
       <trans-unit id="5i3864G" resname="default.navbar.dropdown.action2">
         <source>default.navbar.dropdown.action2</source>
-        <target>Action2</target>
+        <target>Logout</target>
       </trans-unit>
       <trans-unit id="LouHHGw" resname="default.navbar.dropdown.action3">
         <source>default.navbar.dropdown.action3</source>

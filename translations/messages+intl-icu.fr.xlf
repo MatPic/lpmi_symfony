@@ -27,15 +27,15 @@
       </trans-unit>
       <trans-unit id="yuY5pkT" resname="default.navbar.dropdown">
         <source>default.navbar.dropdown</source>
-        <target>Menu déroulant</target>
+        <target>Usager</target>
       </trans-unit>
       <trans-unit id="sru7Q77" resname="default.navbar.dropdown.action1">
         <source>default.navbar.dropdown.action1</source>
-        <target>Action 1</target>
+        <target>Se connecter</target>
       </trans-unit>
       <trans-unit id="5i3864G" resname="default.navbar.dropdown.action2">
         <source>default.navbar.dropdown.action2</source>
-        <target>Action 2</target>
+        <target>Se deconnecter</target>
       </trans-unit>
       <trans-unit id="LouHHGw" resname="default.navbar.dropdown.action3">
         <source>default.navbar.dropdown.action3</source>

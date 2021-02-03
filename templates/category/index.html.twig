@@ -9,7 +9,7 @@
         {% for product in products %}
            <div class="col-12 col-md-6 col-lg-3">
                 <div class="card">
-                    <img src="{{host ~ product.visuel}}" class="card-img-top" alt="{{product.libelle}}">
+                    <img src="{{product.visuel}}" class="card-img-top" alt="{{product.libelle}}">
                     <div class="card-body">
                         <h5 class="card-title">{{product.libelle}}</h5>
                         <p class="card-text">{{product.texte}}</p>

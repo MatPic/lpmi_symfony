@@ -20,10 +20,8 @@
                         {% trans %} default.navbar.dropdown {% endtrans %}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">{% trans %} default.navbar.dropdown.action1 {% endtrans %}</a></li>
-                        <li><a class="dropdown-item" href="#">{% trans %} default.navbar.dropdown.action2 {% endtrans %}</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">{% trans %} default.navbar.dropdown.action3 {% endtrans %}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_login') }}">{% trans %} default.navbar.dropdown.action1 {% endtrans %}</a></li>
+                        <li><a class="dropdown-item" href="{{ path('app_logout') }}">{% trans %} default.navbar.dropdown.action2 {% endtrans %}</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
