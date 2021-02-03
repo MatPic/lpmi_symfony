@@ -12,7 +12,6 @@ class BoutiqueController extends AbstractController
     public function findAll(EntityManagerInterface $em) {
         $caterepo = $em->getRepository(Category::class);
         $categories = $caterepo->findAll();
-        dump($categories[0]->getLibelle());
         return $this->render("boutique/index.html.twig", ["categories" => $categories]);
     }
 }

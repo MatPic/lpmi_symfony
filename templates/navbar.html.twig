@@ -10,14 +10,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('usager_index') }}"><i class="fas fa-user mx-2"></i>{% trans %} default.navbar.usager {% endtrans %}</a>
+                    <a class="nav-link" href="{{ path('usager_index') }}"><i class="fas fa-users mx-2"></i>{% trans %} default.navbar.usager {% endtrans %}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('boutique') }}"><i class="fas fa-store mx-2"></i>{% trans %} default.navbar.shop {% endtrans %}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {% trans %} default.navbar.dropdown {% endtrans %}
+                        <i class="fas fa-user mx-2"></i>{% trans %} default.navbar.dropdown {% endtrans %}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ path('app_login') }}">{% trans %} default.navbar.dropdown.action1 {% endtrans %}</a></li>
@@ -26,7 +26,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {% trans %} default.navbar.langage {% endtrans %}
+                        <i class="fas fa-language mx-2"></i>{% trans %} default.navbar.langage {% endtrans %}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {% for locale in supported_locales|split('|') %}
@@ -35,7 +35,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('contact') }}" tabindex="-1" aria-disabled="true">{% trans %} default.navbar.contact {% endtrans %}</a>
+                    <a class="nav-link" href="{{ path('contact') }}" tabindex="-1" aria-disabled="true"><i class="fas fa-comments mx-2"></i>{% trans %} default.navbar.contact {% endtrans %}</a>
                 </li>
                 <li class="nav-item">
                     {{render(controller('App\\Controller\\NestedController::panier'))}}

@@ -27,7 +27,7 @@
       </trans-unit>
       <trans-unit id="yuY5pkT" resname="default.navbar.dropdown">
         <source>default.navbar.dropdown</source>
-        <target>Usager</target>
+        <target>Connexion</target>
       </trans-unit>
       <trans-unit id="sru7Q77" resname="default.navbar.dropdown.action1">
         <source>default.navbar.dropdown.action1</source>
