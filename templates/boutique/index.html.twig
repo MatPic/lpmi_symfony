@@ -5,14 +5,13 @@
     <div class="row mt-5">
         {% for category in categories %}
            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card">
+                <a href="{{ path('category', { "id": category.id }) }}" class="card category-card">
                     <img src="{{category.visuel}}" class="card-img-top" alt="{{category.libelle}}">
                     <div class="card-body">
                         <h5 class="card-title">{{category.libelle}}</h5>
                         <p class="card-text">{{category.texte}}</p>
-                        <a href="{{ path('category', { "id": category.id }) }}" class="btn btn-primary">{% trans %} default.boutique.action {% endtrans %}</a>
                     </div>
-                </div>
+                </a>
            </div>
         {% endfor %}
     </div>

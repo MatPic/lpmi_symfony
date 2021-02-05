@@ -59,3 +59,61 @@
 .contact-image img:hover {
   transform: scale(0.9);
 }
+
+.category-card {
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 4px 4px 4px grey;
+  transition: all .2s ease;
+}
+
+.category-card:hover {
+  transform: scale(0.9);
+}
+
+.category-card .card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+.category-card .card-title {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.category-card .card-text {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+#cart-title {
+  text-align: center;
+}
+
+.cart {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.cart-button {
+  background-color: #78b6ec;
+  border-radius: 7px;
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.cart-button:hover {
+  color: white;
+  background-color: #2f6390;
+}
+
+.cart-button:first-child {
+  margin-right: 12px;
+}
