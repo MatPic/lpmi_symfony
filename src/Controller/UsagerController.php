@@ -12,14 +12,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
-/**
- * @Route("/usager")
- */
+
 class UsagerController extends AbstractController
 {
-    /**
-     * @Route("/", name="usager_index", methods={"GET"})
-     */
     public function index(UsagerRepository $usagerRepository): Response
     {
         return $this->render('usager/index.html.twig', [
@@ -27,9 +22,6 @@ class UsagerController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/new", name="usager_new", methods={"GET","POST"})
-     */
     public function new(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $usager = new Usager();
@@ -53,9 +45,6 @@ class UsagerController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="usager_show", methods={"GET"})
-     */
     public function show(Usager $usager): Response
     {
         return $this->render('usager/show.html.twig', [
@@ -63,9 +52,6 @@ class UsagerController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}/edit", name="usager_edit", methods={"GET","POST"})
-     */
     public function edit(Request $request, Usager $usager): Response
     {
         $form = $this->createForm(UsagerType::class, $usager);
@@ -83,9 +69,6 @@ class UsagerController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="usager_delete", methods={"DELETE"})
-     */
     public function delete(Request $request, Usager $usager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$usager->getId(), $request->request->get('_token'))) {

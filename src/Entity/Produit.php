@@ -46,7 +46,7 @@ class Produit
     private $prix;
 
     /**
-     * @ORM\OneToMany(targetEntity=LigneCommande::class, mappedBy="idArticle")
+     * @ORM\OneToMany(targetEntity=LigneCommande::class)
      */
     private $ligneCommandes;
 
