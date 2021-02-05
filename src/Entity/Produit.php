@@ -20,7 +20,7 @@ class Produit
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="produits")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="produits", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $idCategorie;

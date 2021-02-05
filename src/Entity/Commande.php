@@ -36,7 +36,7 @@ class Commande
     private $statut;
 
     /**
-     * @ORM\OneToMany(targetEntity=LigneCommande::class, mappedBy="idCommande")
+     * @ORM\OneToMany(targetEntity=LigneCommande::class, mappedBy="idCommande", cascade={"persist"})
      */
     private $ligneCommandes;
 
