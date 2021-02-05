@@ -4,7 +4,8 @@ namespace App\Service;
 use App\Entity\LigneCommande;
 use App\Entity\Produit;
 use App\Entity\Commande;
-use Doctrine\Persistence\ObjectManager;
+use App\Entity\Usager;
+use App\Repository\ProduitRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -20,28 +21,51 @@ class PanierService {
         $this->produitrepo = $em->getRepository(Produit::class);
     }
 
-    public function panierToCommande(Commande $commande,  ObjectManager $entityManager) {
+    public function panierToCommande(Usager $usager, ProduitRepository $produitRepository): Commande {
         if (empty($this->panier)) {
             throw new \Exception('Empty basket');
         }
 
-        foreach ($this->panier as $idProduit => $data) {
-            $ligneCommande = new LigneCommande();
+        $commande = $this->initCommande($usager);
 
-            $ligneCommande->setIdCommande($commande);
-            $ligneCommande->setIdArticle($data['entity']);
-            $ligneCommande->setPrix($data['entity']->getPrix());
-            $ligneCommande->setQuantite($data['nbr']);
+        $realPanier = $this->getContenu($produitRepository);
 
-            $entityManager->persist($ligneCommande);
+        foreach ($realPanier as $idProduit => $data) {
+            $ligneCommande = $this->initLigneCommande($data, $commande);
+
             $commande->addLigneCommande($ligneCommande);
         }
 
         return $commande;
     }
 
-    public function getContenu() {
-        return $this->panier;
+    private function initCommande(Usager $usager): Commande {
+        $commande = new Commande();
+        $commande->setStatut("EN COURS");
+        $commande->setIdUsager($usager);
+        $commande->setDateCommande(new \DateTime('now'));
+
+        return $commande;
+    }
+
+    private function initLigneCommande(array $data, Commande $commande): LigneCommande {
+        $ligneCommande = new LigneCommande();
+        $ligneCommande->setIdCommande($commande);
+        $ligneCommande->setIdArticle($data['entity']);
+        $ligneCommande->setPrix($data['entity']->getPrix());
+        $ligneCommande->setQuantite($data['nbr']);
+
+        return $ligneCommande;
+    }
+
+    public function getContenu(ProduitRepository $produitRepository): array {
+        $realPanier = [];
+
+        foreach ($this->panier as $k => $v) {
+            $realPanier[$k] = [ 'entity' => $produitRepository->find($k), 'nbr' => $v ];
+        }
+
+        return $realPanier;
     }
 
     public function getTotalPrix() {
@@ -54,40 +78,42 @@ class PanierService {
       return $total;
     }
 
-    public function getNbProduits() {
+    public function getNbProduits(): int {
         $nbrProduit = 0;
-        foreach ($this->panier as $idProduit => $data) {
-          $nbrProduit += $data['nbr'];
+        foreach ($this->panier as $k => $v) {
+          $nbrProduit += $v;
         }
         return $nbrProduit;
 
     }
 
-    public function addProduit(Produit $produit, int $quantite = 1) {
-        if (!empty($this->panier[$produit->getId()])) {
-          $this->panier[$produit->getId()]['nbr']+=1;
+    public function addProduit(int $idProduit, int $quantite = 1) {
+        if (!empty($this->panier[$idProduit])) {
+          $this->panier[$idProduit]+=1;
         } else {
-          $this->panier[$produit->getId()] = ['entity' => $produit, 'nbr' => $quantite];
+          $this->panier[$idProduit] = $quantite;
         }
         $this->session->set(PanierService::$PANIER_SESSION, $this->panier);
+
+        dump("in add PRoduit", $this->panier);
     }
 
     public function removeProduit(int $idProduit) {
       if (!empty($this->panier[$idProduit]) && $this->panier[$idProduit] > 1) {
-        $this->panier[$idProduit]['nbr']-=1;
-      } else if(!empty($this->panier[$idProduit])){
+        $this->panier[$idProduit]-=1;
+      } else if(!empty($this->panier[$idProduit])) {
         $this->deleteProduit($idProduit);
       }
       $this->session->set(PanierService::$PANIER_SESSION, $this->panier);
     }
 
     public function deleteProduit(int $idProduit) {
-      dump($this->panier);
       unset($this->panier[$idProduit]);
       $this->session->set(PanierService::$PANIER_SESSION, $this->panier);
     }
 
     public function clear() {
         $this->panier = array();
+        $this->session->set(PanierService::$PANIER_SESSION, $this->panier);
     }
 }

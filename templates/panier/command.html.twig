@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+{% block title %}{% trans %} default.panier.command {% endtrans %}{% endblock %}
+{% block content %}
+    <p>Merci pour votre commande</p>
+    <div class="container">
+        <div>
+            {% for ligneCommande in commande.lignesCommandes %}
+                <p>Produit</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

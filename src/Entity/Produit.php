@@ -20,7 +20,7 @@ class Produit
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="produits")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="produits", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $idCategorie;
@@ -46,7 +46,7 @@ class Produit
     private $prix;
 
     /**
-     * @ORM\OneToMany(targetEntity=LigneCommande::class)
+     * @ORM\OneToMany(targetEntity=LigneCommande::class, mappedBy="idArticle")
      */
     private $ligneCommandes;
 

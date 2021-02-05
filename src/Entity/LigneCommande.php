@@ -19,7 +19,7 @@ class LigneCommande
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Produit::class, inversedBy="ligneCommandes")
+     * @ORM\ManyToOne(targetEntity=Produit::class, inversedBy="ligneCommandes", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $idArticle;
@@ -91,5 +91,10 @@ class LigneCommande
         $this->prix = $prix;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+       return "LigneCommande entity";
     }
 }

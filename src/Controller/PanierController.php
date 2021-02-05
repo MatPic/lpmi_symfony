@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Commande;
 use App\Entity\Produit;
 use App\Entity\Usager;
+use App\Repository\ProduitRepository;
 use App\Service\PanierService;
 use Symfony\Component\Security\Core\Security;
 use Doctrine\ORM\EntityManagerInterface;
@@ -14,65 +15,52 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PanierController extends AbstractController
 {
     public static $TEMPLATE = "panier/index.html.twig";
+    public static $TEMPLATE_CONFIRM = "panier/command.html.twig";
 
-    public function index(PanierService $pS, Security $security) {
-        $user = $security->getUser();
-        dump($user);
-        dump($pS->getTotalPrix());
-        return $this->render(PanierController::$TEMPLATE, [ "panier" => $this->getPanier($pS)]);
+
+    public function index(PanierService $pS, ProduitRepository $produitRepository) {
+        dump($pS->getContenu($produitRepository));
+        return $this->render(PanierController::$TEMPLATE, [ "panier" => $pS->getContenu($produitRepository)]);
     }
 
-    public function add(int $idProduit, PanierService $pS, EntityManagerInterface $em) {
-        dump("Add called");
-        $produitrepo = $em->getRepository(Produit::class);
-        $produit = $produitrepo->find($idProduit);
-        $pS->addProduit($produit);
+    public function add(int $idProduit, PanierService $pS, EntityManagerInterface $em): \Symfony\Component\HttpFoundation\RedirectResponse
+    {
+        $pS->addProduit($idProduit);
         return $this->redirectToRoute('panier.index');
     }
 
-    public function remove(int $idProduit, PanierService $pS) {
+    public function remove(int $idProduit, PanierService $pS): \Symfony\Component\HttpFoundation\RedirectResponse
+    {
         dump("Remove called");
         $pS->removeProduit($idProduit);
         return $this->redirectToRoute('panier.index');
     }
 
-    public function delete(int $idProduit, PanierService $pS) {
+    public function delete(int $idProduit, PanierService $pS): \Symfony\Component\HttpFoundation\RedirectResponse
+    {
         dump("Delete called");
         $pS->deleteProduit($idProduit);
         return $this->redirectToRoute('panier.index');
     }
 
-    public function validation(Security $security, PanierService $pS, EntityManagerInterface $em) {
-        // TODO doctrine think it's a new entity
+    public function validation(Security $security, PanierService $pS, EntityManagerInterface $em, ProduitRepository $produitRepository): \Symfony\Component\HttpFoundation\Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $usager = $security->getUser();
 
-        $user = $security->getUser();
-        if (empty($user)) {
-            return $this->redirectToRoute('app_login');
-        }
-        $usager = $user;
-        $commande = new Commande();
-        $commande->setStatut("EN COURS");
-        $commande->setIdUsager($usager);
-        $commande->setDateCommande(new \DateTime('now'));
-
+        // maybe persist and flush the command here
         try {
-            $entityManager = $this->getDoctrine()->getManager();
-
-            $commande = $pS->panierToCommande($commande, $entityManager);
+            $commande = $pS->panierToCommande($usager, $produitRepository);
 
             $entityManager->persist($commande);
             $entityManager->flush();
 
-            $this->redirectToRoute('panier.index');
+            $pS->clear();
         } catch (\Exception $err) {
             throw $err;
             // TODO
         }
 
-
-    }
-
-    private function getPanier(PanierService $pS) {
-        return $pS->getContenu();
+        return $this->render(PanierController::$TEMPLATE_CONFIRM, [ "commande" => $commande]);
     }
 }
