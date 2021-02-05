@@ -1,5 +1,10 @@
 {% extends "base.html.twig" %}
 {% block title %}{% trans %} default.index.title {% endtrans %}{% endblock %}
 {% block content %}
-    <p>index</p>
+    <h1 id="index-title" class="mx-5 my-5">Page d'accueil</h1>
+    <p id="index-text" class="mx-5 my-3">Bienvenue sur ce site e-commerce, où vous pourrez y retrouver des articles à commander en ligne. <br> Amusez-vous bien !</p>
+    <a class="index-image mx-5" href="{{ path('boutique') }}">
+      <img src="/images/epicerie.jpg" alt="">
+    </a>
+    <span id="image-click">Cliquer sur l'image pour accéder à la boutique</span>
 {% endblock %}
