@@ -57,15 +57,16 @@ class ProduitRepository extends ServiceEntityRepository
       return $result[0]["prix"];
     }
 
-    /*
-    public function findOneBySomeField($value): ?Produit
+
+    public function findWithoutProxy($value): ?Produit
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
+            ->innerJoin('p.idCategorie', 'c')
+            ->andWhere('p.id = :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
     }
-    */
+
 }

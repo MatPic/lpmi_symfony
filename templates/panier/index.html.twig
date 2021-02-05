@@ -4,10 +4,10 @@
     <h1 id="cart-title" class="mx-5 my-5">Panier</h1>
     <div class="container">
         <div class="row">
-            {% for id, article in panier %}
+            {% for id, data in panier %}
             <div class="cart">
-              {# <span>{{libelle}}</span> #}
-              <p>Quantite: {{ article }}</p>
+              <span>{{ data['entity'].libelle }}</span>
+              <p>Quantite: {{ data['nbr'] }}</p>
               <span></span>
               <div class="cart-buttons">
                 <a class="cart-button" href="{{ path('panier.remove', { "idProduit": id }) }}">Remove</a>
@@ -15,6 +15,9 @@
               </div>
             </div>
             {% endfor %}
+            <div class="col-12 d-flex justify-content-center align-items-center mt-5">
+                <a class="text-align-center check-button" href="{{ path('panier.validation') }}">Valider</a>
+            </div>
         </div>
     </div>
     {# <a class="cart-button" href="{{ path('panier.validation') }}">Valider</a> #}
